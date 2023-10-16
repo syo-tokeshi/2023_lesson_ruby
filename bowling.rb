@@ -1,18 +1,20 @@
-scores = ARGV[0].split(",")
+# frozen_string_literal: true
 
-calculable_scores = scores.map{ |score|
-  if score == "X"
-    [10,0]
+scores = ARGV[0].split(',')
+
+calculable_scores = scores.map do |score|
+  if score == 'X'
+    [10, 0]
   else
     score
   end
-}.flatten.map(&:to_i)
+end.flatten.map(&:to_i)
 
 framed_scores = calculable_scores.each_slice(2).to_a
 p framed_scores
 
 total_score = 0
-framed_scores.each_with_index { |frame, index|
+framed_scores.each_with_index do |frame, index|
   total_score += frame.sum
 
   if index < 9 # 最終フレームだけは最初のみ計算
@@ -23,5 +25,5 @@ framed_scores.each_with_index { |frame, index|
       total_score += framed_scores[index + 1][0]
     end
   end
-}
+end
 p total_score
