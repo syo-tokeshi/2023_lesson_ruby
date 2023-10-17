@@ -10,7 +10,7 @@ grouped_files[-1].push(*(Array.new(shortage_file_count,""))) # 後にtranspose�
 displayed_file_group = grouped_files.transpose
 
 displayed_file_group.each { |group|
-  p group.map{ |file|
+  puts group.map{ |file|
     file.ljust(max_filename_length + whitespace, " ")
   }.join
 }
