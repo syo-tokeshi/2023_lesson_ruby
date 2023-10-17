@@ -2,14 +2,12 @@
 
 require 'optparse'
 require 'date'
-opt = OptionParser.new
 params = ARGV.getopts('m:y:')
 
 month = (params['m'] || Date.today.month).to_i
 year = (params['y'] || Date.today.year).to_i
 
 raise ArgumentError, '月は1-12の範囲を指定して下さい' if month < 1 || month > 12
-
 raise ArgumentError, '年は1970-2100の範囲を指定して下さい' if year < 1970 || year > 2100
 
 month_first_date = Date.new(year, month, 1)
