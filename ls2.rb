@@ -2,18 +2,16 @@
 
 require 'debug'
 require 'optparse'
-$params = ARGV.getopts('ar')
+params = ARGV.getopts('ar')
 
 def dotmatch?
-  File::FNM_DOTMATCH if $params["a"]
-end
-
-def reverse?(file_list)
-  file_list.reverse! if $params["r"]
+  # params["a"] ? File::FNM_DOTMATCH : 0 # aオプションがない場合は0を与えて隠しファイルを探さない
+  ARGV.getopts('ar')["a"] ? File::FNM_DOTMATCH : 0 # aオプションがない場合は0を与えて隠しファイルを探さない
 end
 
 file_list = ARGV[0] ? Dir.glob('*', dotmatch?, base: ARGV[0]) : Dir.glob('*', dotmatch?) # baseを指定すると、こちらを基準にファイルを探す
-reverse?(file_list)
+# file_list.reverse! if $params["r"]
+file_list.reverse! if ARGV.getopts('ar')["r"]
 file_count = file_list.count
 max_filename_length = file_list.max_by(&:length).length
 whitespace = 3
