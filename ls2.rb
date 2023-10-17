@@ -1,12 +1,23 @@
 # frozen_string_literal: true
 
 require 'debug'
+require 'optparse'
+$params = ARGV.getopts('ar')
 
-file_list = ARGV[0] ? Dir.glob('*', base: ARGV[0]) : Dir.glob('*') # baseを指定すると、こちらを基準にファイルを探す
+def dotmatch?
+  File::FNM_DOTMATCH if $params["a"]
+end
+
+def reverse?(file_list)
+  file_list.reverse! if $params["r"]
+end
+
+file_list = ARGV[0] ? Dir.glob('*', dotmatch?, base: ARGV[0]) : Dir.glob('*', dotmatch?) # baseを指定すると、こちらを基準にファイルを探す
+reverse?(file_list)
 file_count = file_list.count
 max_filename_length = file_list.max_by(&:length).length
 whitespace = 3
-displayed_column_count = 2
+displayed_column_count = 3
 column_count = (file_count / displayed_column_count.to_f).ceil # ceilで切り上げるためには、to_fで小数点を付ける必要がある
 
 displayed_file_list = file_list.each_slice(column_count).to_a
