@@ -1,4 +1,5 @@
 class Score
+  attr_reader :scores
   def initialize(score)
     @scores = convert_score_to_scores(score)
   end
@@ -7,11 +8,11 @@ class Score
     scores = score.split(',')
     scores.map do |s|
       if s == 'X'
-        [10,0].flatten
+        [10,0]
       else
         s.to_i
       end
-    end
+    end.flatten
   end
 
 

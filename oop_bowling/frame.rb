@@ -1,4 +1,5 @@
 class Frame
+  attr_reader :shots
   def initialize(shots)
     @shots = shots # この時点で計算できる１個１個のshotが入っている
   end
