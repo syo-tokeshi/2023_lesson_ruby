@@ -1,10 +1,6 @@
-require 'shot'
 class Frame
   def initialize(shots)
-    @shots = []
-    shots.each { |s|
-      @shots += Shot.new(s) # フレームクラスが呼ばれる時、配列で渡ってくるので、eachで回してnew
-    }
+    @shots = shots # この時点で計算できる１個１個のshotが入っている
   end
 
   def total_scores
