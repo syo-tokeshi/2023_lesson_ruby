@@ -1,5 +1,5 @@
-require 'frame'
-require 'score'
+require_relative 'frame'
+require_relative 'score'
 class Game
   def initialize(score)
     @scores = Score.new(score) # scoreの中身は何かあまり気にせず、newすると良い感じに変換されているイメージを持つ
