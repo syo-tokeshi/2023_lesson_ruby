@@ -9,7 +9,7 @@ class Game
   def total_scores
     scores = @score.convert_score_to_scores
     scores.each_slice(2) do |s|
-      @frames += Frame.new(s)
+      @frames += Frame.new(s) # ボウリングのフレームは１投目&2投目のペアなのは明確なので、この渡し方で良さそう
     end
     @frames.sum # gameが保有しているブウリングの各フレームを全部足すイメージ
   end
