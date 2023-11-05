@@ -4,8 +4,8 @@ require 'debug'
 
 class Game
   def initialize(score)
-    @score = Score.new(score) # scoreの中身は何かあまり気にせず、newすると良い感じに変換されているイメージを持つ
-    @frames = @score.scores.each_slice(2).map do |s|
+    score = Score.new(score) # scoreの中身は何かあまり気にせず、newすると良い感じに変換されているイメージを持つ
+    @frames = score.scores.each_slice(2).map do |s|
       Frame.new(s) # ボウリングのフレームは１投目&2投目のペアなのは明確なので、この渡し方で良さそう
     end
   end
