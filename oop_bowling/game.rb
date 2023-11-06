@@ -11,7 +11,8 @@ class Game
     end
   end
 
-  def total_point # 外部から使う際は、「game.total_point」のように、気持ちよく呼べる
+  # 外部から使う際は、「game.total_point」のように、気持ちよく呼べる
+  def total_point
     calc_total_frames
   end
 
