@@ -7,11 +7,11 @@ class Game
   def initialize(score)
     score = Score.new(score) # scoreの中身は何かあまり気にせず、newすると良い感じに変換されているイメージを持つ
     @frames = score.scores.each_slice(2).map do |s|
-      Frame.new(s) # ボウリングのフレームは１投目&2投目のペアなのは明確なので、この渡し方で良さそう
+      Frame.new(s) # ボウリングのフレームは１投目&2投目のペアなのは明確なので、このデータ構造を知っているのは問題ないと思う
     end
   end
 
-  def total_score
+  def total_point # 外部から使う際は、「game.total_point」のように、気持ちよく呼べる
     calc_total_frames
   end
 
