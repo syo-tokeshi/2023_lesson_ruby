@@ -4,10 +4,10 @@ class Frame
   attr_reader :shots
 
   def initialize(shots)
-    @shots = shots # この時点で計算できる１個１個のshotが入っている
+    @shots = shots # shotのペアが入っている
   end
 
   def total_shots
-    @shots.sum # 自身が保有しているショットを計算するイメージ
+    @shots.sum # shotのペアの合計値を出す
   end
 end
