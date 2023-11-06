@@ -4,8 +4,14 @@ class Score
     @scores = convert_score_to_scores(score)
   end
 
+  private
+
   def convert_score_to_scores(score)
     scores = score.split(',')
+    convert_to_computable_scores(scores)
+  end
+
+  def convert_to_computable_scores(scores)
     scores.map do |s|
       if s == 'X'
         [10,0]

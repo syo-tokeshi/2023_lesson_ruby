@@ -10,21 +10,27 @@ class Game
     end
   end
 
-  def total_scores
-    total_point = 0
+  def total_score
+    calc_total_frames
+  end
+
+  private
+
+  def calc_total_frames
+    total_frames_point = 0
     @frames.each_with_index do |frame, index|
-      total_point += frame.total_scores
+      total_frames_point += frame.total_shots
 
       if index < 9 # 最終フレームだけは最初のみ計算するので除外する
         # debugger
         if frame.shots[0] == 10 # ストライクの場合
-          total_point += @frames[index + 1].total_scores # 次のフレームの合計を足す
-          total_point += @frames[index + 2].shots[0] if @frames[index + 1].shots[0] == 10
-        elsif frame.total_scores == 10 # スペアの場合
-          total_point += @frames[index + 1].shots[0]
+          total_frames_point += @frames[index + 1].total_shots # 次のフレームの合計を足す
+          total_frames_point += @frames[index + 2].shots[0] if @frames[index + 1].shots[0] == 10
+        elsif frame.total_shots == 10 # スペアの場合
+          total_frames_point += @frames[index + 1].shots[0]
         end
       end
     end
-    total_point
+    total_frames_point
   end
 end
