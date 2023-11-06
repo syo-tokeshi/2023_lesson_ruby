@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 require_relative 'frame'
 require_relative 'score'
-require 'debug'
 
 class Game
   def initialize(score)
@@ -22,7 +23,6 @@ class Game
       total_frames_point += frame.total_shots
 
       if index < 9 # 最終フレームだけは最初のみ計算するので除外する
-        # debugger
         if frame.shots[0] == 10 # ストライクの場合
           total_frames_point += @frames[index + 1].total_shots # 次のフレームの合計を足す
           total_frames_point += @frames[index + 2].shots[0] if @frames[index + 1].shots[0] == 10

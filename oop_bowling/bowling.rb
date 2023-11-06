@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'game'
 
 score = ARGV[0] # ボウリングのスコアは"6,3,9,0,0,3,8,2,7,3,X,9,1,8,0,X,6,4"のような文字列で渡ってくる。
