@@ -26,28 +26,30 @@ class Menu
 
   def discount_by_rate(count)
     # debugger
-    discount_by_price + discount_by_count(count)
+    discount_by_price * discount_by_count(count)
   end
 
   def discount_by_price
     if price >= 3000
-       600
+      500
     elsif price >= 2000
-       400
+      400
     elsif price >= 1000
-       200
+      200
     else
       100
     end
   end
 
   def discount_by_count(count)
-    if count >= 8
-       400
-    elsif count >= 6
-       300
+    if count >= 9
+      6
+    elsif count >= 7
+      4
+    elsif count >= 5
+      3
     else
-      100
+      2
     end
   end
 

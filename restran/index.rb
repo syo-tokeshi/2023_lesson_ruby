@@ -1,10 +1,10 @@
 require_relative 'menu'
 
 menus = [
-  menu1 = Menu.new("gyu-don", 500),
-  menu2 = Menu.new("onigiri", 200),
-  menu3 = Menu.new("yakiniku-teisyoku", 3000),
-  menu4 = Menu.new("makunouchi-gozen", 2000)
+  menu1 = Menu.new("onigiri", 200),
+  menu2 = Menu.new("gyu-don", 500),
+  menu3 = Menu.new("makunouchi-gozen", 2000),
+  menu4 = Menu.new("yakiniku-teisyoku", 3000)
 ]
 
 puts "番号を入力し、商品を選んで下さい"
