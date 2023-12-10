@@ -31,11 +31,11 @@ class Menu
 
   def discount_by_price
     if price >= 3000
-      return 600
+       600
     elsif price >= 2000
-      return 400
+       400
     elsif price >= 1000
-      return 200
+       200
     else
       100
     end
@@ -43,9 +43,9 @@ class Menu
 
   def discount_by_count(count)
     if count >= 8
-      return 400
+       400
     elsif count >= 6
-      return 300
+       300
     else
       100
     end
