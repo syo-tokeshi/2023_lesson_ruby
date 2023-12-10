@@ -1,13 +1,13 @@
 require_relative 'menu'
 
 menus = [
-  menu1 = Menu.new("tabako", 500),
-  menu2 = Menu.new("poteto", 200),
-  menu3 = Menu.new("neko", 3000),
-  menu4 = Menu.new("kome", 2000)
+  menu1 = Menu.new("gyu-don", 500),
+  menu2 = Menu.new("onigiri", 200),
+  menu3 = Menu.new("dinner", 3000),
+  menu4 = Menu.new("lunch", 2000)
 ]
 
-puts "商品を選んでね"
+puts "番号を入力し、商品を選んで下さい"
 
 menus.each_with_index { |menu, index|
   puts "#{index + 1}、#{menu.info}"
@@ -22,3 +22,4 @@ puts "いくつ欲しいですか？"
 want_count = gets.chomp.to_i
 
 puts "#{menus[selected_menu_number - 1].name}の合計金額は#{menus[selected_menu_number - 1].get_total_price(want_count)}円になります！"
+puts "お疲れ様です！"
