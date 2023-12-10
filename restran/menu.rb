@@ -36,8 +36,10 @@ class Menu
       400
     elsif price >= 1000
       200
-    else
+    elsif price >= 1000
       100
+    else
+      50
     end
   end
 

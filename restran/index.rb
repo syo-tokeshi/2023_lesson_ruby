@@ -24,14 +24,14 @@ puts "あなたが選んだのは#{selected_menu_number}、#{menus[selected_menu
 puts "いくつ欲しいですか？(1 ~ 10内の数字でお願いします。)"
 
 while true
-  want_count = gets.chomp.to_i
-  break if (1..10).cover?(want_count)
+  purchase_count = gets.chomp.to_i
+  break if (1..10).cover?(purchase_count)
   puts "1 ~ 10の数を指定してください"
 end
 
-if want_count >= 3
+if purchase_count >= 3
   puts "3個以上買ってくれたので割引しておきました！"
 end
 
-puts "#{menus[selected_menu_number - 1].name}の合計金額は#{menus[selected_menu_number - 1].get_total_price(want_count)}円になります！"
+puts "#{menus[selected_menu_number - 1].name}の合計金額は#{menus[selected_menu_number - 1].get_total_price(purchase_count)}円になります！"
 puts "お疲れ様です！"
