@@ -25,10 +25,8 @@ class Menu
   end
 
   def discount_by_rate
-    # debugger
-    case price
-    when price >= 1000
-      200
+    if price >= 1000
+      400
     else
       100
     end
