@@ -21,12 +21,31 @@ class Menu
   private
 
   def discounted_total_price(count)
-    (price * count) - discount_by_rate
+    (price * count) - discount_by_rate(count)
   end
 
-  def discount_by_rate
-    if price >= 1000
-      400
+  def discount_by_rate(count)
+    # debugger
+    discount_by_price + discount_by_count(count)
+  end
+
+  def discount_by_price
+    if price >= 3000
+      return 600
+    elsif price >= 2000
+      return 400
+    elsif price >= 1000
+      return 200
+    else
+      100
+    end
+  end
+
+  def discount_by_count(count)
+    if count >= 8
+      return 400
+    elsif count >= 6
+      return 300
     else
       100
     end
