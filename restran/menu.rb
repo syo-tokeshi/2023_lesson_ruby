@@ -8,7 +8,7 @@ class Menu
   end
 
   def info
-    "この商品は#{name}で#{price}円です"
+    "#{name}で#{price}円になります"
   end
 
   def get_total_price(count)

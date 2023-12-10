@@ -21,7 +21,7 @@ end
 
 puts "あなたが選んだのは#{selected_menu_number}、#{menus[selected_menu_number - 1].name}ですね"
 
-puts "いくつ欲しいですか？(1 ~ 10以内の数でお願いします。)"
+puts "いくつ欲しいですか？(1 ~ 10内の数字でお願いします。)"
 
 while true
   want_count = gets.chomp.to_i
